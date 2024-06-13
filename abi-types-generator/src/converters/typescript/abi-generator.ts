@@ -450,7 +450,7 @@ export default class AbiGenerator {
       for (let i = 0; i < abiItem.inputs.length; i++) {
         let inputName = abiItem.inputs[i].name;
         // handle mapping inputs
-        if (inputName.length === 0) {
+        if (inputName === undefined || inputName.length === 0) {
           inputName = `parameter${i}`;
         }
 
@@ -493,7 +493,7 @@ export default class AbiGenerator {
 
         let inputName = abiItem.inputs[i].name;
         // handle mapping inputs
-        if (inputName.length === 0) {
+        if (inputName === undefined || inputName.length === 0) {
           inputName = `parameter${i}`;
         }
 
@@ -686,7 +686,7 @@ export default class AbiGenerator {
             );
 
             let propertyName = abiItemOutput.name;
-            if (propertyName.length === 0) {
+            if (propertyName === undefined || propertyName.length === 0) {
               propertyName = `result${i}`;
             }
 

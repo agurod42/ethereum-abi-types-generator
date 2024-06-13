@@ -239,7 +239,7 @@ export default class TypeScriptHelpers {
       | 'Response'
       | 'EventEmittedResponse' = 'Response'
   ): string {
-    if (inputOrOutput.name.length > 0) {
+    if (inputOrOutput.name !== undefined && inputOrOutput.name.length > 0) {
       return `${Helpers.capitalize(inputOrOutput.name)}${requestInterfaceType}`;
     }
 
