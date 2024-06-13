@@ -244,11 +244,7 @@ export default class TypeScriptHelpers {
     }
 
     if (!inputOrOutput.internalType) {
-      throw new Error(
-        `All tuple types need a name or a internal type else the tool can not generate static naming for the responses please check all your tuple and tuple[] have got a name or a internal type. - ${JSON.stringify(
-          inputOrOutput
-        )}`
-      );
+      inputOrOutput.internalType = inputOrOutput.type;
     }
 
     const internalType = Helpers.deepClone(inputOrOutput.internalType!);
